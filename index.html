@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RandomColourGenerator</title>
+</head>
+<style>
+    .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100%;
+        background-color: black;
+    }
+
+    .cont {
+        background-color: aliceblue;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        height: auto;
+        align-items: center;
+        color: aqua;
+        justify-content: center;
+    }
+
+    .text {
+        font-size: x-large;
+        color: black;
+    }
+    
+    button {
+        display: block;
+        width: 100%;
+        margin: 10px;
+        height: 23px;
+        background-color: black;
+        color: white;
+        border-radius: 20px;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="cont">
+            <div class="text">
+                #fff
+            </div>
+            <button id="button">
+                Click me
+            </button>
+        </div>
+    </div>
+</body>
+
+<script>
+    function change()
+    {
+        let x = Math.floor(Math.random() * 16777215);
+        let randomcode = "#" + x.toString(16);
+        document.querySelector(".main").style.backgroundColor = randomcode;
+        document.querySelector(".main").style.transition = "0.5s";
+        document.querySelector(".text").innerHTML = randomcode;
+        
+    }
+    document.getElementById("button").addEventListener("click", function () {
+        change();
+    });
+    change();
+</script>
+
+</html>
